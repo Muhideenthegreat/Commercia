@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Commercia</div>
+        <button class="secondary" id="logoutBtn">Logout</button>
+      </nav>
+      <p class="tagline">
+        A curated marketplace for modern work and lifestyle. Discover thoughtful hardware, cozy essentials,
+        and studio-ready tools in one secure shopping experience.
+      </p>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Product Catalog</h2>
+        <div class="catalog-controls">
+          <select id="categorySelect">
+            <option value="">All categories</option>
+          </select>
+          <input id="searchInput" type="text" placeholder="Search products" />
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <aside class="panel">
+        <h2>Account + Cart</h2>
+        <div class="account-stack">
+          <div class="account-card">
+            <h3>Sign In</h3>
+            <input id="loginEmail" type="email" placeholder="Email" />
+            <input id="loginPassword" type="password" placeholder="Password" />
+            <button id="loginBtn">Login</button>
+          </div>
+
+          <div class="account-card">
+            <h3>Create Account</h3>
+            <input id="registerName" type="text" placeholder="Full name" />
+            <input id="registerEmail" type="email" placeholder="Email" />
+            <input id="registerPassword" type="password" placeholder="Password (min 6 chars)" />
+            <input id="registerPhone" type="text" placeholder="Phone (optional)" />
+            <button id="registerBtn">Register</button>
+          </div>
+
+          <div class="account-card">
+            <h3>Your Cart</h3>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-summary">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">$0.00</span>
+            </div>
+          </div>
+
+          <div class="account-card">
+            <h3>Checkout</h3>
+            <form class="checkout-form" id="checkoutForm">
+              <input name="shippingName" placeholder="Full name" required />
+              <input name="shippingAddress" placeholder="Street address" required />
+              <input name="shippingCity" placeholder="City" required />
+              <input name="shippingState" placeholder="State" required />
+              <input name="shippingZip" placeholder="Zip" required />
+              <button type="submit">Place Order</button>
+            </form>
+            <p class="notice" id="checkoutNotice">Log in to checkout.</p>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

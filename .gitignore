@@ -1,0 +1,27 @@
+# Java/Maven
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Env files
+.env
+.env.*
+
+# Maven wrapper artifacts
+/.mvn/wrapper/maven-wrapper.jar
+
+# Local data
+/db-data/

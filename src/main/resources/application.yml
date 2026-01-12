@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: commercia
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+app:
+  jwt:
+    issuer: commercia-api
+    secret: "${COMMERCIA_JWT_SECRET}"
+    expiration-minutes: 120
+  cors:
+    allowed-origins: "http://localhost:8080"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/commercia?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: commercia
+    password: commercia
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/commercia
+    username: commercia
+    password: commercia
+    driver-class-name: org.postgresql.Driver
